@@ -1,0 +1,204 @@
+.mainBanner {
+    margin: 5rem 0 5rem 0;
+    display: flex;
+    align-items: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    justify-content: space-between;
+    /* gap: 5rem; */
+  }
+  .logoImage {
+    height: 30rem;
+    object-fit: contain;
+  }
+  .head{
+    margin-top: 56px;
+    margin-bottom: 56px;
+} 
+  .heading {
+    padding: 3rem;
+    text-align: center;
+  }
+  .big {
+    font-size: 2.8rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+  .big span {
+    color: rgb(79, 54, 223);
+    font-size: 3rem;
+  }
+  .para {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: rgb(97, 96, 96);
+  }
+  
+  @media (max-width: 1250px) and (min-width: 900px) {
+    .logoImage {
+      height: 23rem;
+    }
+    .heading {
+      padding: 1rem;
+    }
+    .big {
+      font-size: 2.3rem;
+    }
+    .big span {
+      font-size: 2.5rem;
+    }
+    .para {
+      font-size: 1.1rem;
+    }
+  }
+  @media (max-width: 900px) {
+    .mainBanner {
+      flex-direction: column-reverse;
+    }
+    .logoImage {
+      height: 23rem;
+    }
+  }
+  @media (max-width: 750px) {
+    .big {
+      font-size: 2.3rem;
+    }
+    .big span {
+      font-size: 2.5rem;
+    }
+    .para {
+      font-size: 1.1rem;
+    }
+  }
+  @media (max-width: 600px) {
+    .logoImage {
+      height: 18rem;
+    }
+  }
+  @media (max-width: 450px) {
+    .logoImage {
+      height: 15rem;
+    }
+  }
+
+
+  .gpt3__cta
+  {
+   
+      color: rgb(255, 255, 255);
+      display:flex ;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+      padding: 2rem;
+      margin: 4rem;
+      border-radius: 1rem;
+      background-color: rgb(247, 90, 63);
+  }
+  .gpt3__cta-content p
+  {
+     
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 30px;
+      color: #0E0E0E;
+  }
+  .gpt3__cta-content h3{
+      
+      font-style: normal;
+      font-weight: 800;
+      font-size: 24px;
+      line-height: 45px;
+      color: #000000;
+  }
+  .gpt3__cta-btn
+  {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 2rem;
+  
+  }
+  .gpt3__cta-btn button{
+      background: #551feb;
+      border-radius: 40px;
+     
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 30px;
+  padding: 0.5rem 1rem;
+      color: #ffffff;
+      border: none;
+      cursor: pointer;
+      outline: none;
+      min-width: 150px;
+  }
+  @media  screen and (max-width:650px) {
+      .gpt3__cta
+      {
+          flex-direction: column;
+      }
+      .gpt3__cta-btn
+      {
+          margin: 2rem 0 0;
+  
+      }
+  }
+  @media  screen and (max-width:550px) {
+      .gpt3__cta
+      {
+          margin: 4rem 2rem;
+      }
+      .gpt3__cta-content h3
+      {
+          font-size: 18px;
+          line-height: 32px;
+          
+      }
+      .gpt3__cta-btn button
+      {
+          font-size: 14px;
+          line-height: 28px;
+          
+      }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .baner {
+    position: fixed; 
+    /* top: 0; 
+    left: 0;  */
+      
+    /* Preserve aspet ratio */
+    /* min-width: 100%;
+    min-height: 100%; */
+   
+   /* .imgbox {
+    display: grid;
+    height: 100%;
+} */ 
+/* .center-fit {
+    image-rendering: auto;
+    min-width: 100%;
+    min-height: 100%; 
+    /* margin: 5rem 0 5rem 0;
+  display: flex; 
+  
+
+*/
