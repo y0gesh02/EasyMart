@@ -8,6 +8,11 @@ export default makeStyles((theme) => ({
     maxHeight: '600px',
 
   },
+
+  btn:{
+    marginTop: '20px',
+    marginBottom: '10px'
+  },
   card: {
     display: 'flex',
     width: '100%',

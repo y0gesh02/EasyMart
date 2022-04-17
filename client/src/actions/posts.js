@@ -1,4 +1,4 @@
-import { START_LOADING, END_LOADING, FETCH_ALL, FETCH_POST, FETCH_BY_SEARCH, CREATE, UPDATE, DELETE, LIKE, COMMENT, FETCH_BY_CREATOR } from '../constants/actionTypes';
+import { START_LOADING, END_LOADING, FETCH_ALL,ADD_TO_CART, FETCH_POST, FETCH_BY_SEARCH, CREATE, UPDATE, DELETE, LIKE, COMMENT, FETCH_BY_CREATOR } from '../constants/actionTypes';
 import * as api from '../api/index.js';
 
 export const getPost = (id) => async (dispatch) => {
@@ -36,7 +36,17 @@ export const getPostsByCreator = (name) => async (dispatch) => {
     console.log(error);
   }
 };
+export const getaddtocart = (id) => async (dispatch) => {
+  try {
+    dispatch({ type: ADD_TO_CART });
+    const { data: { data } } = await api.fetchPostsByFav(id);
 
+    dispatch({ type: ADD_TO_CART, payload: { data } });
+    dispatch({ type: END_LOADING });
+  } catch (error) {
+    console.log(error);
+  }
+};
 export const getPostsBySearch = (searchQuery) => async (dispatch) => {
   try {
     dispatch({ type: START_LOADING });
@@ -48,6 +58,7 @@ export const getPostsBySearch = (searchQuery) => async (dispatch) => {
     console.log(error);
   }
 };
+
 
 export const createPost = (post, history) => async (dispatch) => {
   try {

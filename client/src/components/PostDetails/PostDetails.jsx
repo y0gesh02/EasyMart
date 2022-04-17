@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Paper, Typography, CircularProgress, Divider } from '@material-ui/core/';
+import { Paper, Typography, CircularProgress, Divider ,Button} from '@material-ui/core/';
 import { useDispatch, useSelector } from 'react-redux';
 import moment from 'moment';
 import { useParams, useHistory, Link } from 'react-router-dom';
@@ -36,7 +36,11 @@ const Post = () => {
       </Paper>
     );
   }
+  const addPost = () => {
+    // dispatch(getPost(post._id, history));
 
+    history.push(`/cart/${post._id}`);
+  };
   const recommendedPosts = posts.filter(({ _id }) => _id !== post._id);
 
   return (
@@ -60,6 +64,7 @@ const Post = () => {
               {` ${post.name}`}
             </Link>
           </Typography>
+          <Button  className={classes.btn} variant="contained" color="primary" onClick={addPost}>ADD To Favriote</Button>
           <Typography variant="body1">{moment(post.createdAt).fromNow()}</Typography>
           <Divider style={{ margin: '20px 0' }} />
           {/* <Typography variant="body1"><strong>Realtime Chat - coming soon!</strong></Typography> */}
@@ -82,7 +87,7 @@ const Post = () => {
                 <Typography gutterBottom variant="subtitle2">{price}</Typography>
                 <Typography gutterBottom variant="subtitle2">{name}</Typography>
                 <Typography gutterBottom variant="subtitle2">{message}</Typography>
-                <Typography gutterBottom variant="subtitle1">Likes: {likes.length}</Typography>
+                {/* <Typography gutterBottom variant="subtitle1">Likes: {likes.length}</Typography> */}
                 <img src={selectedFile} width="200px" />
               </div>
             ))}

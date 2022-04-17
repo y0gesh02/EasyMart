@@ -9,7 +9,7 @@ export const getPosts = async (req, res) => {
     const { page } = req.query;
     
     try {
-        const LIMIT = 8;
+        const LIMIT = 12;
         const startIndex = (Number(page) - 1) * LIMIT; // get the starting index of every page
     
         const total = await PostMessage.countDocuments({});
@@ -46,7 +46,17 @@ export const getPostsByCreator = async (req, res) => {
         res.status(404).json({ message: error.message });
     }
 }
+export const getaddtocart = async (req, res) => {
+    const { id } = req.query;
 
+    try {
+        const posts = await PostMessage.find({ id });
+
+        res.json({ data: posts });
+    } catch (error) {    
+        res.status(404).json({ message: error.message });
+    }
+}
 export const getPost = async (req, res) => { 
     const { id } = req.params;
 

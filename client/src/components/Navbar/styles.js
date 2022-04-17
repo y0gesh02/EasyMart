@@ -10,7 +10,7 @@ export default makeStyles((theme) => ({
     margin: '30px 0',
     display: 'flex',
     
-    backgroundColor:'#f6f6f8',
+    backgroundColor:'#fcfcfc',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -49,6 +49,7 @@ export default makeStyles((theme) => ({
       justifyContent: 'center',
     },
   },
+
   logout: {
     marginLeft: '20px',
   },
@@ -56,6 +57,7 @@ export default makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     textAlign: 'center',
+    cursor:'pointer',
   },
   brandContainer: {
     display: 'flex',
