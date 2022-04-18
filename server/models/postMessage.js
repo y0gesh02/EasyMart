@@ -1,8 +1,10 @@
+
 import mongoose from 'mongoose';
 
 const postSchema = mongoose.Schema({
     title: String,
     price: String,
+    chat: String,
     message: String,
     name: String,
     creator: String,

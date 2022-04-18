@@ -28,11 +28,11 @@ const Footer = () => {
 <div className='gpt3__cta'>
            <div className='gpt3__cta-content'>
                
-               <h3>Thanks For Visiting Easy Mart . Makes Sell and Purchase Easy !!! </h3>
+               <h3>Thanks For Visiting Easy Mart! Makes Sell and Purchase Easy !!! </h3>
            </div>
-           <div className='gpt3__cta-btn'>
+           {/* <div className='gpt3__cta-btn'>
                <button type='button'>Get Started</button>
-           </div>
+           </div> */}
         </div>
     <footer className={classes.footer}>
       <Typography
