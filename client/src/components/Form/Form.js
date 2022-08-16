@@ -9,7 +9,7 @@ import { createPost, updatePost } from '../../actions/posts';
 import useStyles from './styles';
 
 const Form = ({ currentId, setCurrentId }) => {
-  const [postData, setPostData] = useState({ title: '',price: '',chat:'', message: '', tags: [], selectedFile: '' });
+  const [postData, setPostData] = useState({ title: '', price: '', chat:'', message: '', tags: [], selectedFile: '' });
   const post = useSelector((state) => (currentId ? state.posts.posts.find((message) => message._id === currentId) : null));
   const dispatch = useDispatch();
   const classes = useStyles();
@@ -63,7 +63,7 @@ const Form = ({ currentId, setCurrentId }) => {
         <TextField name="title" variant="outlined" label="Product Name" fullWidth value={postData.title} onChange={(e) => setPostData({ ...postData, title: e.target.value })} />
 
         <TextField name="price" variant="outlined" label="Price Per Item" fullWidth value={postData.price} onChange={(e) => setPostData({ ...postData, price: e.target.value })} />
-        <TextField name="Chat Link" variant="outlined" label="Whatsapp Link" fullWidth value={postData.chat} onChange={(e) => setPostData({ ...postData, chat: e.target.value })} />
+        <TextField name="chat" variant="outlined" label="Whatsapp Link" fullWidth value={postData.chat} onChange={(e) => setPostData({ ...postData, chat: e.target.value })} />
         
         <TextField name="message" variant="outlined" label="Description" fullWidth multiline rows={4} value={postData.message} onChange={(e) => setPostData({ ...postData, message: e.target.value })} />
         <div style={{ padding: '5px 0', width: '94%' }}>

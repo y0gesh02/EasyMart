@@ -8,6 +8,11 @@ export default makeStyles((theme) => ({
     alignItems: 'center',
     padding: theme.spacing(2),
   },
+ 
+  // cart:{
+  //     padding:'200px',
+  //     backgroundColor:'red',
+  // },
   root: {
     '& .MuiTextField-root': {
       margin: theme.spacing(1),

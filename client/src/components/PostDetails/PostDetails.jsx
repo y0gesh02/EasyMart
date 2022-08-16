@@ -7,6 +7,7 @@ import { useParams, useHistory, Link } from 'react-router-dom';
 import { getPost, getPostsBySearch } from '../../actions/posts';
 import CommentSection from './CommentSection';
 import useStyles from './styles';
+import GoogleLogin from 'react-google-login';
 
 const Post = () => {
   const { post, posts, isLoading } = useSelector((state) => state.posts);
@@ -36,11 +37,9 @@ const Post = () => {
       </Paper>
     );
   }
-  const addPost = () => {
-    // dispatch(getPost(post._id, history));
+  const addPost = () => history.push(`/cart/${post._id}`);
+  
 
-    history.push(`/cart/${post._id}`);
-  };
   const recommendedPosts = posts.filter(({ _id }) => _id !== post._id);
 
   return (
@@ -48,15 +47,13 @@ const Post = () => {
       <div className={classes.card}>
         <div className={classes.section}>
           <Typography variant="h3" component="h2">{post.title}</Typography>
-
-          <Typography variant="h6" component="h2">RS. {post.price}</Typography>
-          <Typography variant="h6" component="h2">Chat Link: <Link to={post.chat}>{post.chat}</Link></Typography>
-          <Typography gutterBottom variant="h6" color="textSecondary" component="h2">{post.tags.map((tag) => (
-            <Link to={`/tags/${tag}`} style={{ textDecoration: 'none', color: '#3f51b5' }}>
-              {` #${tag} `}
-            </Link>
-          ))}
+          <Typography gutterBottom variant="h6" color="textSecondary" component="h2">{post.tags.map((tag) => ` #${tag} `)}
+           
+        
           </Typography>
+          <Typography variant="h4" component="h2">RS. {post.price}</Typography>
+          <Typography variant="h6" component="h2">Chat Link: <Link to={{pathname:`${post.chat}`}} target="_blank">{post.chat}</Link></Typography>
+          
           <Typography gutterBottom variant="body1" component="p">{post.message}</Typography>
           <Typography variant="h6">
             Uploaded by:
@@ -81,10 +78,10 @@ const Post = () => {
           <Typography gutterBottom variant="h5">You might also like:</Typography>
           <Divider />
           <div className={classes.recommendedPosts}>
-            {recommendedPosts.map(({ title, price, name, message, likes, selectedFile, _id }) => (
+            {recommendedPosts.map(({ title, name, message, selectedFile, _id }) => (
               <div style={{ margin: '20px', cursor: 'pointer' }} onClick={() => openPost(_id)} key={_id}>
                 <Typography gutterBottom variant="h6">{title}</Typography>
-                <Typography gutterBottom variant="subtitle2">{price}</Typography>
+                {/* <Typography gutterBottom variant="subtitle2">{price}</Typography> */}
                 <Typography gutterBottom variant="subtitle2">{name}</Typography>
                 <Typography gutterBottom variant="subtitle2">{message}</Typography>
                 {/* <Typography gutterBottom variant="subtitle1">Likes: {likes.length}</Typography> */}

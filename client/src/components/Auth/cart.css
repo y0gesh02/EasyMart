@@ -1,0 +1,28 @@
+
+  .papers {
+      
+      /* padding: 200px; */
+      background-color: rgb(255, 255, 255);
+    /* margin: 5rem 0 5rem 0; */
+    /* display: flex;
+    align-items: center; */
+    text-align: center;
+    
+    
+  }
+  .main{
+    padding: 45px;
+    font-weight: 500;
+  }
+  .cartimg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 200px;
+    
+   
+    /* object-fit: contain; */
+  }
